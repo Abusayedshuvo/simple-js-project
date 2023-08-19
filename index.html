@@ -48,7 +48,7 @@
                 <div class="col-span-12 lg:col-span-8">
                     <h2 class="text-[40px] font-semibold mb-10">Kitchenware</h2>
                     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                        <div class="product-card text-center">
+                        <div onclick="cart(this)" class="product-card text-center cursor-pointer">
                             <div class="img-bg bg-slate-100 p-16 rounded-lg mb-6">
                                 <img class="mx-auto" src="images/prod1.png" alt="">
                             </div>
@@ -62,7 +62,7 @@
                             <p class="font-semibold text-xl my-2">K. Accessories</p>
                             <p class="text-xl text-slate-400">39.00 TK</p>
                         </div>
-                        <div class="product-card text-center">
+                        <div onclick="cart(this)" class="product-card text-center cursor-pointer">
                             <div class="img-bg bg-slate-100 p-16 rounded-lg mb-6">
                                 <img class="mx-auto" src="images/prod2.png" alt="">
                             </div>
@@ -75,8 +75,9 @@
                             </div>
                             <p class="font-semibold text-xl my-2">K. Accessories Two</p>
                             <p class="text-xl text-slate-400">25.00 TK</p>
+
                         </div>
-                        <div class="product-card text-center">
+                        <div onclick="cart(this)" class="product-card text-center cursor-pointer">
                             <div class="img-bg bg-slate-100 p-16 rounded-lg mb-6">
                                 <img class="mx-auto" src="images/prod3.png" alt="">
                             </div>
@@ -96,22 +97,30 @@
                     <div class="mt-20">
                         <h5 class="text-2xl">Have coupon?</h5>
                         <div class="join mt-5">
-                            <input type="text" class="input input-bordered join-item" placeholder="Coupon code" />
-                            <button
+                            <input id="coupon" type="text" class="input input-bordered join-item"
+                                placeholder="Coupon code" />
+                            <button id="coupon-btn" disabled
                                 class="btn join-item rounded-r-lg bg-[#e527b2] text-white text-xl px-6">Apply</button>
                         </div>
+
+                        <div id="product-name" class="pt-10">
+
+                        </div>
+
                         <hr class="mt-8">
-                        <p class="text-2xl mt-5">Total price: <span class="text-slate-400" id="total">257.00</span><span
-                                class="text-slate-400" id="total"><span class="text-slate-400" id="total">TK</span>
+                        <p class="text-2xl mt-5">Total price: <span class="text-slate-400"
+                                id="total-price">00.00</span><span class="text-slate-400"><span class="text-slate-400"
+                                    id="total">TK</span>
                         </p>
-                        <p class="text-2xl mt-5">Discount: <span class="text-slate-400" id="total">257.00</span><span
+                        <p class="text-2xl mt-5">Discount: <span class="text-slate-400" id="discount">00.00</span><span
                                 class="text-slate-400" id="total"><span class="text-slate-400" id="total">TK</span>
                         </p>
                         <p class="text-2xl mt-5">Total: <span class="text-slate-400" id="total">257.00</span><span
                                 class="text-slate-400" id="total"><span class="text-slate-400" id="total">TK</span>
                         </p>
                         <hr class="my-8">
-                        <button class="bg-[#e527b2] rounded-lg text-white py-3 px-10 text-xl font-semibold">Make
+                        <button disabled id="purchase-btn"
+                            class="bg-[#e527b2] rounded-lg text-white py-3 px-10 text-xl font-semibold btn h-auto">Make
                             Purchase</button>
                     </div>
                 </div>
@@ -119,6 +128,7 @@
         </div>
     </main>
     <!-- main section end -->
+    <script src="js/script.js"></script>
 </body>
 
 </html>
