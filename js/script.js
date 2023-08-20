@@ -24,11 +24,15 @@ function cart(target) {
 
   // coupon function
   const couponBtn = document.getElementById("coupon-btn");
-  if (totalPrice > 200) {
+  if (totalPrice >= 200) {
     couponBtn.removeAttribute("disabled");
   } else {
     couponBtn.setAttribute("disabled", "true");
   }
+  // Total Price Before Coupon Code Apply
+  const total = document.getElementById("total");
+  total.innerText = totalPrice;
+  couponCode();
 }
 
 // coupon function
@@ -42,3 +46,11 @@ function couponCode() {
     total.innerText = totalPrice - discount;
   }
 }
+
+// Alert if coupon code is wrong
+document.getElementById("coupon-btn").addEventListener("click", function () {
+  const couponInput = document.getElementById("coupon").value;
+  if (couponInput !== "SELL200") {
+    alert("Invalid Code. Please check and try again");
+  }
+});
